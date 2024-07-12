@@ -5,6 +5,7 @@ import lombok.RequiredArgsConstructor;
 import org.apache.catalina.User;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.management.relation.Role;
 import java.time.LocalDateTime;
@@ -15,23 +16,23 @@ import java.util.Optional;
 public class UserServiceImpl implements UserService {
 
     private final UserRepository userRepository;
-    private final PasswordEncoder
+    private final PasswordEncoder passwordEncoder;
 
 
     public User saveUser(User user) {
         user.setPassword(passwordEncoder.encode(user.getPassword()));
         user.setRole(Role.USER);
-        user.setCreateTime(LocalDateTime.now());
         return userRepository.save(user);
     }
 
     @Override
     public Optional<User> findByUsername(String username) {
-        return Optional.empty();
+        return userRepository.findByUsername(username);
     }
 
     @Override
+    @Transactional
     public void changeRole(Role newRole, String username) {
-
+        userRepository.updateUserRole(username, newRole);
     }
 }
