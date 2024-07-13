@@ -1,9 +1,10 @@
 package com.ssj.moviebackend.security;
 
 
+import com.ssj.moviebackend.model.User;
 import com.ssj.moviebackend.service.UserService;
+import com.ssj.moviebackend.utils.SecurityUtils;
 import lombok.RequiredArgsConstructor;
-import org.apache.catalina.User;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;

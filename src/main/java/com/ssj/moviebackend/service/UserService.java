@@ -1,8 +1,8 @@
 package com.ssj.moviebackend.service;
 
-import org.apache.catalina.User;
+import com.ssj.moviebackend.model.Role;
+import com.ssj.moviebackend.model.User;
 
-import javax.management.relation.Role;
 import java.util.Optional;
 
 public interface UserService {

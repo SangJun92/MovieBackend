@@ -1,7 +1,7 @@
 package com.ssj.moviebackend.security.jwt;
 
-import com.example.shopbackend.security.UserPrinciple;
-import com.example.shopbackend.utils.SecurityUtils;
+import com.ssj.moviebackend.security.UserPrinciple;
+import com.ssj.moviebackend.utils.SecurityUtils;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
