@@ -23,4 +23,7 @@ public class Review {
 
     @Column(name = "vot_avg", nullable = false)
     private Double vot_avg;
+
+    @Transient
+    private String token;
 }

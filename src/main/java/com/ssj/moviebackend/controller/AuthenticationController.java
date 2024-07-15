@@ -25,6 +25,7 @@ public class AuthenticationController {
         if(userService.findByUsername(user.getUsername()).isPresent()){
             return new ResponseEntity<>(HttpStatus.CONFLICT);
         }
+        System.out.println(user.getUsername());
         return new ResponseEntity<>(userService.saveUser(user), HttpStatus.CREATED);
     }
 

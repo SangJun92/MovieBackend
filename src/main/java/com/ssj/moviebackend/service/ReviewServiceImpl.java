@@ -5,6 +5,7 @@ import com.ssj.moviebackend.repository.ReviewRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -15,11 +16,25 @@ public class ReviewServiceImpl implements ReviewService {
 
     @Override
     public Review saveReview(Review review) {
+
         return reviewRepository.save(review);
     }
 
     @Override
-    public Optional<Review> findReviewById(String username) {
-        return reviewRepository.findById(username);
+    public List<Review> findByMovieId(Long movie_id) {
+//        return reviewRepository.findByMovieId(movie_id);
+        return null;
+    }
+
+    @Override
+    public void updateReview(Review review) {
+        reviewRepository.save(review);
+
+    }
+
+    @Override
+    public void deleteReview(Long id) {
+        reviewRepository.deleteById(id);
+
     }
 }

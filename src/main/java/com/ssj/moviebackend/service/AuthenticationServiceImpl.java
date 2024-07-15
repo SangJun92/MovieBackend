@@ -25,8 +25,9 @@ public class AuthenticationServiceImpl implements AuthenticationService{
         String jwt = jwtProvider.generateToken(userPrinciple);
 
         User signInUser = userPrinciple.getUser();
-        System.out.println("로그인 처리 유저:``````````````````"+signInUser);
         signInUser.setToken(jwt);
+        System.out.println("로그인 처리 유저:``````````````````"+signInUser);
+
 
         return signInUser;
     }
