@@ -8,7 +8,7 @@ import java.util.Optional;
 public interface ReviewService {
 
     Review saveReview(Review review);
-    List<Review> findByMovieId(Long movie_id);
+    List<Review> findAllReviews();
     void updateReview(Review review);
     void deleteReview(Long id);
 }

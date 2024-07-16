@@ -21,10 +21,10 @@ public class ReviewServiceImpl implements ReviewService {
     }
 
     @Override
-    public List<Review> findByMovieId(Long movie_id) {
-//        return reviewRepository.findByMovieId(movie_id);
-        return null;
+    public List<Review> findAllReviews() {
+        return reviewRepository.findAll();
     }
+
 
     @Override
     public void updateReview(Review review) {

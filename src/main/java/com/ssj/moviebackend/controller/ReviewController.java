@@ -17,6 +17,12 @@ public class ReviewController {
 
     private final ReviewService reviewService;
 
+    @GetMapping("/inputReview")
+    private String reviewList(@AuthenticationPrincipal UserDetails userDetails) {
+        return "/api/review/inputReview";
+    }
+
+
     // 리뷰 작성
     @PostMapping("/inputReview")
     public Review createReview(@RequestBody Review review, @AuthenticationPrincipal UserDetails userDetails) {

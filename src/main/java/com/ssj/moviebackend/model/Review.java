@@ -1,7 +1,10 @@
 package com.ssj.moviebackend.model;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 @Data
 @Entity
@@ -12,16 +15,16 @@ public class Review {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "movie_id", nullable = false)
+    @Column(name = "movie_id")
     private Long movie_id;
 
-    @Column(name = "username", unique = true, nullable = false, length = 100)
+    @Column(name = "username", unique = true,  length = 100)
     private String username;
 
-    @Column(name = "content", nullable = false)
+    @Column(name = "content")
     private String content;
 
-    @Column(name = "vot_avg", nullable = false)
+    @Column(name = "vot_avg")
     private Double vot_avg;
 
     @Transient
