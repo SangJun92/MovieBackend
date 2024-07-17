@@ -21,8 +21,8 @@ public class ReviewServiceImpl implements ReviewService {
     }
 
     @Override
-    public List<Review> findAllReviews() {
-        return reviewRepository.findAll();
+    public List<Review> findAllReviews(Long movie_id) {
+        return reviewRepository.findByMovieId(movie_id);
     }
 
 
